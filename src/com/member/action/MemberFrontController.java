@@ -115,11 +115,50 @@ public class MemberFrontController extends HttpServlet {
 		}
 		else if(command.equals("/MemberInfo.me")){
 			System.out.println("C : /MemberInfo.me 호출");
-			
-			
+			// DB정보를 가져와서 view페이지에 출력
+			// MemberInfoAction() 객체 생성
+			action = new MemberInfoAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-		
-		
+		else if(command.equals("/MemberUpdate.me")){
+			System.out.println("C : /MemberUpdate.me 호출");
+			// DB정보를 -> 화면(view)출력-./member/updateForm.jsp
+			// MemberUpdateAction() 객체 생성
+			
+			action = new MemberUpdateAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/MemberUpdateProAction.me")){
+			System.out.println("C : /MemberUpdateProAction.me 호출");
+			// 입력받은 정보를 DB에 저장(수정) -> 메인페이지로 이동
+			// MemberUpdateProAction() 객체 생성
+			action = new MemberUpdateProAction();
+				
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+//		else if(command.equals()){
+//			System.out.println("호출");
+//			
+//			action = new updateMember();
+//			
+//			
+//			
+//			
+//		}
+			
+			
 		
 		/******************* 2.페이지 주소 매핑(연결) ********************************/
 

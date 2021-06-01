@@ -24,9 +24,19 @@
   
   <!-- MemberFrontController 매핑 -->
   
+  <!-- AdminGoodsFrontController 매핑 -->
+  <servlet>
+    <servlet-name>AdminGoodsFrontController</servlet-name>
+    <servlet-class>com.admin.goods.action.AdminGoodsFrontController</servlet-class>
+  </servlet>
   
+  <servlet-mapping>
+    <servlet-name>AdminGoodsFrontController</servlet-name>
+    <url-pattern>*.ag</url-pattern>
+  </servlet-mapping>
+  <!-- AdminGoodsFrontController 매핑 -->
   
-  
+ 
   
   
   

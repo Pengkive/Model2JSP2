@@ -126,6 +126,53 @@ public class MemberDAO {
 	}
 	// idCheck(id,pass)
 	
+	// getMember(id)
+	public MemberDTO getMember(String id){
+		MemberDTO dto = null;
+		try {
+			// 1,2 디비연결
+			conn = getConnection();
+			// 3 sql & pstmt 객체 
+			sql = "select * from itwill_member where id=?";
+			pstmt = conn.prepareStatement(sql);
+			//? 
+			pstmt.setString(1, id);
+			// 4 sql 실행
+			rs = pstmt.executeQuery();
+			// 5 데이터 처리
+			if(rs.next()){
+				dto = new MemberDTO();
+				
+				dto.setAge(rs.getInt("age"));
+				dto.setEmail(rs.getString("email"));
+				dto.setGender(rs.getString("gender"));
+				dto.setId(rs.getString("id"));
+				dto.setName(rs.getString("name"));
+				dto.setPass(rs.getString("pass"));
+				dto.setReg_date(rs.getTimestamp("reg_date"));
+			}
+			
+			System.out.println("DAO : 회원정보 저장완료!");			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		return dto;
+	}
+	// getMember(id)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 
