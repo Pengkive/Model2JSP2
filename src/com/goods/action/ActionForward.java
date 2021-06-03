@@ -1,4 +1,4 @@
-package com.admin.goods.action;
+package com.goods.action;
 
 public class ActionForward {
 	// 페이지를 이동시 이동정보를 저장하는 객체

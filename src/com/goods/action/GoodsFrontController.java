@@ -1,22 +1,20 @@
-package com.admin.goods.action;
+package com.goods.action;
 
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+// 사용하지 않는 패키지 제거  ctrl + shift + o
 
-//@WebServlet('')
-public class AdminGoodsFrontController extends HttpServlet{
+public class GoodsFrontController extends HttpServlet{
 
-	// GET/POST방식 상관없이 한번에 주소 처리
 	protected void doProcess(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("AdminGoods_doProcess() 호출");
+		System.out.println("C : GoodsFrontController_doProcess() 호출");
 		
 		/******************* 1.페이지 주소 파싱 ********************************/
 		// 가상주소 전체 가져오기
@@ -34,74 +32,18 @@ public class AdminGoodsFrontController extends HttpServlet{
 		Action action = null;
 		ActionForward forward = null;
 		
-		if(command.equals("/GoodsAdd.ag")){
-			System.out.println("C : /GoodsAdd.ag  호출");
-			// 정보를 입력받는 페이지 -> view페이지 이동
-			
-			forward = new ActionForward();
-			forward.setPath("./admingoods/admin_goods_write.jsp");
-			forward.setRedirect(false);		
-		}else if(command.equals("/GoodsAddAction.ag")){
-			System.out.println("C : /GoodsAddAction.ag 호출");
-			// GoodsAddAction() 객체 생성
-			action = new GoodsAddAction();
+		if(command.equals("/GoodsList.go")){
+			System.out.println("C : /GoodsList.go 호출");
+			// DB정보를 화면이동 없이 출력
+			// GoodsListAction() 객체 생성
+			action = new GoodsListAction();
 			
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if(command.equals("/AdminGoodsList.ag")){
-			System.out.println("C : /AdminGoodsList.ag 호출");
-			// DB정보를 사용해서 화면에 출력
-			// AdminGoodsListAction() 객체 
-			action = new AdminGoodsListAction();
-			
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}else if(command.equals("/AdminGoodsModify.ag")){
-			System.out.println("C : /AdminGoodsModify.ag 호출");
-			// DB 정보를 꺼내서 화면에 출력
-			// AdminGoodsModifyFormAction();
-			
-			action = new AdminGoodsModifyFormAction();
-			
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}else if(command.equals("/AdminGoodsModifyAction.ag")){
-			System.out.println("C : /AdminGoodsModifyAction.ag 호출");
-			// DB정보를 처리 페이지(list 이동)이동
-			// AdminGoodsModifyAction() 객체 생성
-			
-			action = new AdminGoodsModifyAction();
-			
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}			
 		}
-		else if(command.equals("/AdminGoodsDelete.ag")){
-			System.out.println("C : /AdminGoodsDelete.ag 호출");
-			// 상품정보를 바로 DB에서 삭제 -> 상품리스트 이동
-			// AdminGoodsDeleteAction() 객체 생성
-			action = new AdminGoodsDeleteAction();
-			
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-			
-		}
-		
 		
 		
 		System.out.println("C : 2.페이지 주소 매핑  완료");
@@ -124,22 +66,24 @@ public class AdminGoodsFrontController extends HttpServlet{
 		System.out.println("C : 3.페이지 주소 이동 X(컨트롤러 이동X)");
 		/******************* 3.페이지 주소 이동 ********************************/
 		
+		
+		
 	}
-	
 	
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("AdminGoods_doGet() 호출");
+		System.out.println("C : GoodsFrontController_doGet() 호출");
 		doProcess(request, response);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("AdminGoods_doPost() 호출");
+		System.out.println("C : GoodsFrontController_doPost() 호출");
 		doProcess(request, response);
 	}
+	
 	
 
 }

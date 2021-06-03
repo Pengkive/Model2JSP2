@@ -8,24 +8,26 @@
 </head>
 <body>
 
-	<!-- model2 실행페이지 -->
-	<%
-		//index.jsp 페이지
-		//response.sendRedirect("./MemberJoin.me");
-	
-		//login
-		response.sendRedirect("./MemberLogin.me");
-		
-		
-		
-		
-		
-	
-	
-	
-	%>
-
-
+  <!-- model2 실행페이지 -->
+  <%
+    //index.jsp페이지
+    //response.sendRedirect("./MemberJoin.me");
+    //response.sendRedirect("./MemberLogin.me");
+    
+    // 메인페이지 이동
+    response.sendRedirect("./Main.me");
+    
+    // 쇼핑몰-상품등록/관리/주문/장바구니...
+    // 관리자 - 상품등록
+    //response.sendRedirect("./GoodsAdd.ag");
+    // 관리자 - 상품리스트
+    //response.sendRedirect("./AdminGoodsList.ag");
+    
+     
+  
+  %>
+  
+  
 
 </body>
 </html>

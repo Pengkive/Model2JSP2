@@ -30,10 +30,13 @@ model2.txt
 	View - 화면/디자인 페이지 구성(jsp파일) -> 화면에 출력
 	Controller - 두개의 파일을 연결 구성(Servlet파일)
 	
-	* MVC 패턴에서의 상대경로
 	
-	./MemberJoinAction.me => 내 프로젝트명/MemberJoinAction.me
-	./member/insertForm.jsp => WebContent/member/insertForm.jsp
+	
+* MVC 패턴에서의 상대경로
+
+   ./MemberJoinAction.me => 내프로젝트명/MemberJoinAction.me
+   ./member/insertForm.jsp => WebContent/member/insertForm.jsp
+	
 	
 	
 	CREATE TABLE `model2`.`itwill_member` (
@@ -45,10 +48,9 @@ model2.txt
   `email` VARCHAR(200) NOT NULL,
   `reg_date` TIMESTAMP NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC));	
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC));
 	
 	
-
 	CREATE TABLE `model2`.`itwill_goods` (
   `num` INT NOT NULL,
   `category` VARCHAR(100) NULL,
@@ -62,6 +64,7 @@ model2.txt
   `best` INT NULL,
   `date` DATE NULL,
   PRIMARY KEY (`num`));
+	
 	
 	
 	

@@ -3,8 +3,7 @@ package com.member.db;
 import java.sql.Timestamp;
 
 public class MemberDTO {
-	//model2- itwill_member 테이블 참고
-	//id, pass, name, age, gender, email, reg_date
+	// model2-itwill_memeber 테이블 참고
 	
 	private String id;
 	private String pass;
@@ -14,8 +13,7 @@ public class MemberDTO {
 	private String email;
 	private Timestamp reg_date;
 	
-	
-	
+	// alt shift s + r
 	public String getId() {
 		return id;
 	}
@@ -59,17 +57,11 @@ public class MemberDTO {
 		this.reg_date = reg_date;
 	}
 	
-	
-	
+	// alt shift s + s
 	@Override
 	public String toString() {
-		return "MemberDAO [id=" + id + ", pass=" + pass + ", name=" + name + ", age=" + age + ", gender=" + gender
+		return "MemberDTO [id=" + id + ", pass=" + pass + ", name=" + name + ", age=" + age + ", gender=" + gender
 				+ ", email=" + email + ", reg_date=" + reg_date + "]";
 	}
-	
-	
-	
-	
-	
-	
+
 }
