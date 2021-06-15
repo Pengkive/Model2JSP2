@@ -19,7 +19,7 @@
     
     // 쇼핑몰-상품등록/관리/주문/장바구니...
     // 관리자 - 상품등록
-    //response.sendRedirect("./GoodsAdd.ag");
+   	// response.sendRedirect("./GoodsAdd.ag");
     // 관리자 - 상품리스트
     //response.sendRedirect("./AdminGoodsList.ag");
     

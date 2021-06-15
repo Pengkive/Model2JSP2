@@ -16,16 +16,16 @@ public class MemberLogoutAction implements Action{
 		HttpSession session = request.getSession();
 		session.invalidate();		
 		
-		// 페이지이동
-		response.setContentType("text/html; charset=utf-8 ");
+		// 페이지이동 (js 사용)
+		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.print("<scrip>");
-		out.print("alert('로그아웃 성공!')");
-		out.print("location.href='./Main.me'");
-		out.print("</scrip>");
+		out.print("<script>");
+		out.print(" alert('로그아웃 성공!');");
+		out.print(" location.href='./Main.me';");
+		out.print("</script>");
 		out.close();
-
-		return null; //자바로 쓰는 경우 항상  return null
+		
+		return null;
 	}
 
 }

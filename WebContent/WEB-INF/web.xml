@@ -49,6 +49,20 @@
   <!-- GoodsFrontController 매핑 -->
   
   
+    
+  <!-- BasketFrontController 매핑 -->
+  <servlet>
+    <servlet-name>BasketFrontController</servlet-name>
+    <servlet-class>com.basket.action.BasketFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>BasketFrontController</servlet-name>
+    <url-pattern>*.ba</url-pattern>
+  </servlet-mapping>
+  <!-- BasketFrontController 매핑 -->
+  
+  
   
   
   

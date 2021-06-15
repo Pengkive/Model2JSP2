@@ -20,17 +20,76 @@
   
   <table border="1">
     <tr>
-      <td>전체</td>
-      <td>베스트상품</td>
-      <td>외투</td>
-      <td>정장/신사복</td>
-      <td>티셔츠</td>
-      <td>와이셔츠</td>
-      <td>바지</td>
-      <td>신발</td>
+	  <td>
+       	<a href="./GoodsList.go"> 전체 </a>
+      </td>
+      <td>
+      	<a href="./GoodsList.go?item=best"> 베스트상품</a>
+      </td>
+      <td>
+        <a href="./GoodsList.go?item=outwear"> 외투 </a>
+      </td>
+      <td>
+        <a href="./GoodsList.go?item=fulldress"> 정장/신사복</a>
+      </td>
+      <td>
+        <a href="./GoodsList.go?item=Tshirts"> 티셔츠 </a>
+      </td>
+      <td>
+        <a href="./GoodsList.go?item=shirts"> 와이셔츠 </a>
+      </td>
+      <td>
+        <a href="./GoodsList.go?item=pants"> 바지</a>
+      </td>
+      <td>
+        <a href="./GoodsList.go?item=shoes"> 신발 </a>
+      </td>
     </tr>
     
-    <tr>
+    <%
+      // 전체 상품 개수
+      int size = goodsList.size();
+      // 열의 개수
+      int col =8;
+      // 행의 개수 
+      int row = (size/col)+((size%col>0)? 1:0);
+      // 상품 출력개수 
+      int num = 0;
+      
+      // 행
+      for(int a=0;a<row;a++){
+    	  %>
+    	   <tr>
+    	  <%
+    	  // 열
+    	  for(int b=0;b<col;b++){
+    		  //System.out.print(" 상품1 ");
+    		  GoodsDTO dto = (GoodsDTO) goodsList.get(num);
+    		  %>
+    		     <td>
+    		         <img src="./upload/<%=dto.getImage().split(",")[0]%>"
+	             	 width="120" height="120"
+	          		 ><br>
+	          		 
+	         	  	<a href="./GoodsDetail.go?num=<%=dto.getNum()%>"><%=dto.getName() %></a><br>
+	           		<%=dto.getPrice() %>원  <br>
+    		     </td>
+    		  <%   		  
+    		  num++;
+    		  if(size <= num) break;
+    	  }  
+    	  //System.out.println();
+    	  %>
+    	   </tr>
+    	  <%
+      }
+    
+    
+    %>
+    
+    
+    
+    <%-- <tr>
       <% for(int i=0;i<goodsList.size();i++){
     	  GoodsDTO dto = (GoodsDTO) goodsList.get(i);
     	  %>
@@ -43,7 +102,7 @@
        </td>
       <%} %>   
     
-    </tr>
+    </tr> --%>
   
   </table>
   

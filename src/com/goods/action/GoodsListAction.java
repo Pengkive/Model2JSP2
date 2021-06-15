@@ -20,7 +20,9 @@ public class GoodsListAction implements Action{
 		// item=best
 		String item = request.getParameter("item");
 		
-		
+		if(item == null){
+			item = "all";
+		}
 		
 		// 디비 처리 객체 GoodsDAO 생성
 		GoodsDAO gdao = new GoodsDAO();
@@ -29,7 +31,8 @@ public class GoodsListAction implements Action{
 		// => Action 페이지에서 사용하는 경우
 		
 		// 정보 저장 -> 영역 저장
-		request.setAttribute("goodsList", gdao.getGoodsList());
+//		 request.setAttribute("goodsList", gdao.getGoodsList());
+		request.setAttribute("goodsList", gdao.getGoodsList(item));
 		
 		// 페이지 이동
 		ActionForward forward = new ActionForward();

@@ -27,9 +27,12 @@ public class MemberInfoAction implements Action{
 		MemberDAO mdao = new MemberDAO();
 		
 		MemberDTO mdto = mdao.getMember(id);		
-		
 		// DB에서 전달받은 정보를 저장(request 영역)
 		request.setAttribute("mdto", mdto);
+		
+		
+		//request.setAttribute("mdto", mdao.getMember(id));
+		
 		
 		// 페이지 이동 -> view페이지 (./member/info.jsp)	
 		forward.setPath("./member/info.jsp");
