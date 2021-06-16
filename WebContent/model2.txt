@@ -79,7 +79,7 @@ model2.txt
   
   
   
-  CREATE TABLE `model2`.`itwilll_order` (
+  CREATE TABLE `model2`.`itwill_order` (
   `o_num` INT NOT NULL,
   `o_trade_num` VARCHAR(50) NULL,
   `o_g_num` INT NULL,
