@@ -28,8 +28,8 @@
 	<h2>${sessionScope.id }</h2>
 	
 	<input type="button" value="로그아웃!" 
-	   onclick=" location.href='./MemberLogout.me'; "
-	>
+	   onclick=" location.href='./MemberLogout.me';">
+	   
 	<hr>
 	
 	<h3><a href="./MemberInfo.me">회원 정보 조회</a></h3>
